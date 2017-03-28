@@ -1,0 +1,28 @@
+{
+    "name": "ma-backend",
+    "description": "Back end functionality for awesome mobile app.",
+    "version": "1.0.0",
+    "author": {
+        "name": "Andrew Rybak",
+        "email": "some@gmail.com"
+    },
+    "engines": {
+        "node": ">=6.x"
+    },
+    "scripts": {
+        "start": "node server.js"
+    },
+    "dependencies": {
+        "express": "^4.15.2",
+        "mongoose": "^4.9.0",
+        "body-parser": "^1.17.1",
+        "uuid": "^3.0.1"
+    },
+    "repository": {
+        "type": "git",
+        "url": ""
+    },
+    "keywords": [
+        "express"
+    ]
+}
