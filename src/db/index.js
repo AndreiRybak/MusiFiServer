@@ -12,6 +12,6 @@ const opt = {
     user,
     pass,
 }
-mongoose.connect(`mongodb://${host}:${port}/${dbname}`, prod ? opt : {});
+mongoose.connect(`mongodb://${host}:${port}/${dbname}?authSource=admin`, prod ? opt : {});
 
 module.exports = mongoose;
