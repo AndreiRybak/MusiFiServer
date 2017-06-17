@@ -5,9 +5,13 @@ const host = config.get('db:host');
 const port = config.get('db:port');
 const dbname = config.get('db:database');
 const user = config.get('db:user');
-const password = config.get('db:password');
+const pass = config.get('db:password');
 const prod = config.get('prod');
 
-mongoose.connect(`mongodb://${prod ? `${user}:${password}@` : ''}${host}:${port}/${dbname}`);
+const opt = {
+    user,
+    pass,
+}
+mongoose.connect(`mongodb://${host}:${port}/${dbname}`, prod ? opt : {});
 
 module.exports = mongoose;
