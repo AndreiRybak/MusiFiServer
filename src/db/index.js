@@ -15,6 +15,9 @@ const opt = {
     }
 }
 console.log(`DB credentials: ${user}@${pass}, DB url: ${host}:${port}/${dbname}`);
-mongoose.connect(`mongodb://${host}:${port}/${dbname}?authSource=admin`, prod ? opt : {});
+mongoose.connect(`mongodb://${host}:${port}/${dbname}?authSource=admin`, prod ? opt : {}).then(
+    () => console.log(`Connected to ${host}:${port}/${dbname} DB`),
+    (err) => console.log(`Connected to DB failed, err: ${err}`)
+)
 
 module.exports = mongoose;
