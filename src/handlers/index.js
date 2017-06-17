@@ -3,7 +3,6 @@ const Location = models.Location;
 
 module.exports = {
     createLocation: (req, res) => {
-        console.log('Creating location...');
         const { name, artist, image, longitude, latitude } = req.body;
 
         Location.create({
@@ -17,10 +16,10 @@ module.exports = {
                 id: location._id.toString()
             });
             console.log(`Location created. id: ${location._id.toString()}`);
-        });
+        }).catch(err => console.log(err));
     },
 
     getLocations: (req, res) => {
-        Location.find({}).then((locations) => res.send(locations));
+        Location.find({}).then((locations) => res.send(locations)).catch(err => console.log(err));
     }
 }
