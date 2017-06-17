@@ -1,5 +1,10 @@
 const mongoose = require('mongoose');
+const config = require('../config');
 
-mongoose.connect('mongodb://localhost:32770/music');
+const host = config.get('db:host');
+const port = config.get('db:port');
+const dbname = config.get('db:database')
+
+mongoose.connect(`mongodb://${host}:${port}/${dbname}`);
 
 module.exports = mongoose;

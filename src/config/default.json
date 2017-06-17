@@ -1,0 +1,7 @@
+{
+    "db": {
+        "database": "music",
+        "host": "localhost",
+        "port": "27017"
+    }
+}

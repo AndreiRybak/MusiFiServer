@@ -10,13 +10,13 @@
         "node": ">=6.x"
     },
     "scripts": {
-        "start": "node server.js"
+        "start": "node --inspect server.js"
     },
     "dependencies": {
         "express": "^4.15.2",
         "mongoose": "^4.9.0",
         "body-parser": "^1.17.1",
-        "uuid": "^3.0.1"
+        "nconf": "^0.8.4"
     },
     "repository": {
         "type": "git",

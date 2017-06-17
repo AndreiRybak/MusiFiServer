@@ -3,26 +3,21 @@ const Location = models.Location;
 
 module.exports = {
     createLocation: (req, res) => {
+
+        const {name, artist, image, longitude, latitude} = req.body;
+
         Location.create({
-            trackName: 'awesome track by screpker',
-            longitude: '111',
-            latitude: '111'
-        }).then(location => console.log(location));
-    },
-
-    getLocation: (req, res) => {
-
-    },
-
-    updateLocation: (req, res) => {
-
-    },
-
-    deleteLocation: (req, res) => {
-
+           name,
+           artist,
+           image,
+           longitude,
+           latitude,
+        }).then(location => res.send({
+            id: location._id.toString()
+        }));
     },
 
     getLocations: (req, res) => {
-
+        Location.find({}).then((locations) => res.send(locations));
     }
 }
