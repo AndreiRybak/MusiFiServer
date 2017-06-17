@@ -14,7 +14,7 @@ const opt = {
         pass,
     }
 }
-console.log(`DB credentials: ${user}@${password}, DB url: ${host}:${port}/${dbname}`);
+console.log(`DB credentials: ${user}@${pass}, DB url: ${host}:${port}/${dbname}`);
 mongoose.connect(`mongodb://${host}:${port}/${dbname}?authSource=admin`, prod ? opt : {});
 
 module.exports = mongoose;
